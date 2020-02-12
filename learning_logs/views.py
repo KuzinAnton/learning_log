@@ -52,7 +52,8 @@ def new_topic(request):
 def new_entry(request, topic_id):
 	"""Добавляет новую запись по конкретной теме"""
 	topic = Topic.objects.get(id=topic_id)
-	
+	if topic.owner != request.user:
+		raise Http404
 	if request.method != 'POST':
 		#Данные не отправлялись; создается пустая форма
 		form = EntryForm()
