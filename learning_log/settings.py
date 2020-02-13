@@ -146,7 +146,8 @@ if cwd == '/app' or cwd[:4] == '/tmp':
 	SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 	
 	#Хостом проекта может быть только Heroku
-	ALLOWED_HOSTS = ['https://lit-depths-45658.herokuapp.com/']
+	#ALLOWED_HOSTS = ['https://lit-depths-45658.herokuapp.com/']
+	ALLOWED_HOSTS = ['*']
 	
 	DEBUG = False
 	
